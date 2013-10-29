@@ -19,10 +19,8 @@ div {
 	user-select: none; 
 }
 #container {
-	margin:25px auto;
 	position: relative;
 	background: #000;
-	border: 1px solid #333;
 	width:960px; height:600px;
 }
 #container > div{
