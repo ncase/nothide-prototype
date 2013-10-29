@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--title>Nothing To Hide</title-->
+        <link href='css/game.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div id="container">
+	        
+	        <div id="game_container"></div>
+
+	        <div id="ui_container">
+	        	<div id="tutorial_message"></div>
+	        	<div id="fps_counter"></div>
+	        	<div id="level_selector">
+	        		<div style="width:60px;float:left">Level:</div>
+	        		<div class="button" onclick="Game.gotoLevel(0)" id="level_0">1</div>
+	        		<div class="button" onclick="Game.gotoLevel(1)" id="level_1">2</div>
+	        		<div class="button" onclick="Game.gotoLevel(2)" id="level_2">3</div>
+	        		<div class="button" onclick="Game.gotoLevel(3)" id="level_3">4</div>
+	        		<div class="button" onclick="Game.gotoLevel(4)" id="level_4">5</div>
+	        		<div class="button" onclick="Game.gotoLevel(5)" id="level_5">6</div>
+	        		<div class="button" onclick="Game.gotoLevel(6)" id="level_6">7</div>
+	        	</div>
+        	</div>
+
+        	<div id="loading_screen">
+        		<div id="loading_info">
+					<div style="font-size: 43px;color: #f40;text-align:center;">NOTHING TO HIDE</div>
+					<div style="text-align: center;font-size: 33px;color: #000;">a surveillance state satire</div>
+        			<br>
+        			This is a <i>polished prototype</i> of my upcoming game.
+        			So, not even an alpha version or even a demo.
+        			But that's why your feedback matters so much!
+        		</div>
+        		<br>
+        		<div id="loading_bar">
+        			<div id="loading_bar_red"></div>
+        			<div id="loading_bar_text">LOADING...</div>
+        		</div>
+        	</div>
+
+        	<div id="ending_screen" style="display:none">
+        		WINNER WINNER CHICKEN DINNER
+        	</div>
+
+        </div>
+
+    </body>
+</html>
+
+<!-- Libraries -->
+<script src="scripts/lib/Q.js"></script>
+<script src="scripts/lib/soundjs-0.5.0.min.js"></script>
+
+<!-- Debug -->
+<script src="scripts/src/debug/Debug.js"></script>
+
+<!-- Core game engine -->
+<script src="scripts/src/core/Key.js"></script>
+<script src="scripts/src/core/Display.js"></script>
+<script src="scripts/src/core/Asset.js"></script>
+<script src="scripts/src/core/Camera.js"></script>
+<script src="scripts/src/core/Level.js"></script>
+<script src="scripts/src/core/Game.js"></script>
+
+<!-- For the levels -->
+<script src="scripts/src/level/Player.js"></script>
+<script src="scripts/src/level/Prism.js"></script>
+<script src="scripts/src/level/PrismController.js"></script>
+<script src="scripts/src/level/Shadows.js"></script>
+<script src="scripts/src/level/Map.js"></script>
+<script src="scripts/src/level/Suspicion.js"></script>
+
+<!-- Config -->
+<script src="scripts/config.js"></script>
+<script src="scripts/main.js"></script>
