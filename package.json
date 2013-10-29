@@ -1,12 +1,9 @@
 {
-	"name": "nothing-to-hide",
-	"main": "game.html",
-
-	"window": {
-		"title": "Nothing To Hide, Nothing To Fear",
-		"toolbar": false,
-		"width": 960,
-    	"height": 600,
-    	"fullscreen": true
-	}
+	"name": "nothide-prototype",
+	"description": "the polished prototype for Nothing to Hide",
+	"version": "0.0.0",
+	"dependencies": {
+		"connect": "2.9.0"
+	},
+	"repository": "none"
 }
