@@ -41,8 +41,8 @@
 
 	"art": {
 		"hideCam": true,
-		"background": false,
-		"cam": false,
+		"background": true,
+		"cam": true,
 		"lights": [
 			{"ax":0,"ay":0,"bx":40,"by":12}
 		]

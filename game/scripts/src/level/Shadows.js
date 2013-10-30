@@ -40,7 +40,7 @@
 				var cam = prisms[i];
 				if(!cam.active) continue;
 				var cachedCanvas = cam.canvas;
-				ctx.globalCompositeOperation = "destination-in";
+				ctx.globalCompositeOperation = "source-in";
 				ctx.drawImage(cachedCanvas,0,0);
 			}
 

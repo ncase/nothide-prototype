@@ -28,8 +28,8 @@
 
 	"art": {
 		"hideCam": true,
-		"background": false,
-		"cam": false,
+		"background": true,
+		"cam": true,
 		"lights": [
 			{"ax":0,"bx":15,"ay":0,"by":12}
 		]

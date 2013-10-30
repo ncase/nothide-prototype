@@ -1,3 +1,112 @@
-<body style="background:#000">
-	<iframe src="game.html" width="960" height="600" scrolling="no" style="display:block; margin: 50px auto; border:none"></iframe>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--title>Nothing To Hide</title-->
+        <link href='css/index.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+    	<div style="background:#000; padding:5px 0;">
+			<iframe id="game" src="game.html" width="960" height="600" scrolling="no"></iframe>
+		</div>
+
+		<div id="the_fold"><div></div><div></div></div>
+
+		<div style="font-size:30px; text-align:center; margin-top:30px">
+			This is an early prototype, I need your honest critique!
+		</div>
+		<div id="feedback">
+			<br>
+			
+			Hi, what's your name?
+			<br>
+			<input id="comment_name"></input>
+			<br>
+
+			What stuff in this prototype did you like?<br>
+			(the puzzle mechanic, the mass-surveillance theme, the art style...)
+			<textarea id="comment_like"></textarea>
+			<br>
+
+			What do you feel could use more work?<br>
+			(teaching the mechanics, difficulty curve, the art style...)
+			<textarea id="comment_dislike"></textarea>
+			<br>
+
+			Any other comments or suggestions?<br>
+			<textarea id="comment_other"></textarea>
+
+		</div>
+		<div style="font-size:30px; text-align:center;">
+			Thanks for taking the time to help! :)
+		</div>
+		<div id="send_feedback" sent="false">SEND ME DAT FEEDBACK</div>	
+
+		<!-- -->
+
+		<br>
+		<br>
+		<br>
+
+		<div id="newsletter">
+			<div style="background:#000; overflow:hidden; color:#fff;">
+				<div style="width:800px; margin:50px auto;">
+					<div style="font-size:60px; font-family:Raleway; line-height:1.5em">
+						Join the Nothing Newsletter:
+					</div>
+					<div style="margin-bottom:30px; position:relative;">
+						<form style="margin:0" action="https://tinyletter.com/nothingtohide" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/nothingtohide', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+							<input id="newsletter_email" type="email" placeholder="your@email.com" name="email" required="">
+							<input type="hidden" value="1" name="embed">
+							<button id="submit_button" name="submit">Subscribe</button>
+						</form>
+						<div style="font-size:18px; color:#777; margin-top:5px">
+							Every week, I'll give you the latest updates on <i>Nothing To Hide</i>'s open-source development. 
+							<br>
+							I need your honest feedback!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<br>
+		<br>
+		<br>
+
+		<div id="info">
+			<a href="https://twitter.com/ncasenmare">My Twitter</a> ||
+			<a href="http://facebook.com/nutcasenightmare">My Facebook Page</a> ||
+			<a href="https://github.com/nutcasenightmare/nothide-prototype">Game Source Code</a>
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+	</body>
+</html>
+
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script>
+var myDataRef = new Firebase('https://nothide-prototype-feedback.firebaseio.com/');
+var submit = document.getElementById("send_feedback");
+submit.onclick = function(){
+
+	submit.innerHTML = "AWESOME, FEEDBACK SENT!";
+	submit.setAttribute("sent",true);
+
+	var now = new Date();
+	now = now.toString();
+
+	var comment = {
+		name: document.getElementById("comment_name").value,
+		datetime: now,
+		like: document.getElementById("comment_like").value,
+		dislike: document.getElementById("comment_dislike").value,
+		other: document.getElementById("comment_other").value
+	};
+	myDataRef.push(comment);
+
+};
+</script>

@@ -44,8 +44,8 @@
 	],
 
 	"art": {
-		"background": false,
-		"cam": false,
+		"background": true,
+		"cam": true,
 		"lights": [
 			{"ax":3,"bx":6,"ay":1,"by":6},
 			{"ax":15.3,"bx":19,"ay":0,"by":6}

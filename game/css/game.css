@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Raleway';
-	src: local('Raleway'), url(../assets/fonts/Raleway-Thin.ttf) format('truetype');
+	src: local('Raleway'), url(../assets/fonts/Raleway-Regular.ttf) format('truetype');
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 	font-family: Raleway;
 	font-size: 20px;
 }
-div {
+body, canvas, div {
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
@@ -109,6 +109,7 @@ div {
 	position: absolute;
 }
 #loading_bar_red {
+	border-radius: 20px;
 	background: #f40;
 	height:100%;
 	width:0%;

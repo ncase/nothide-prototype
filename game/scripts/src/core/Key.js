@@ -17,9 +17,13 @@
 	// Event Handling
 	window.onkeydown = function(event){
 	    Key[KEY_CODES[event.keyCode]]=true;
+	    event.stopPropagation();
+	    event.preventDefault();
 	};
 	window.onkeyup = function(event){
 	    Key[KEY_CODES[event.keyCode]]=false;
+	    event.stopPropagation();
+	    event.preventDefault();
 	};
 
 })(window);

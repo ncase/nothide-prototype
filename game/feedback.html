@@ -1,0 +1,47 @@
+<style>
+body {
+	margin:0;
+	font-family: sans-serif;
+	font-size: 20px;
+}
+#feedback {
+	width:800px;
+	margin: 50px auto;
+}
+</style>
+<div id="feedback"></div>
+
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script>
+	var feedback = document.getElementById("feedback");
+	var myDataRef = new Firebase('https://nothide-prototype-feedback.firebaseio.com/');
+	lastMessagesQuery = myDataRef.startAt().limit(500);
+	lastMessagesQuery.on('child_added', function(childSnapshot) {
+		
+		var comment = childSnapshot.val();
+		
+		var html = "";
+		html += "<b>Name:</b><br>";
+		html += escapeHtml(comment.name) + "<br><br>";
+		html += "<b>Time:</b><br>";
+		html += escapeHtml(comment.datetime) + "<br><br>";
+		html += "<b>Likes:</b><br>";
+		html += escapeHtml(comment.like) + "<br><br>";
+		html += "<b>Dislikes:</b><br>";
+		html += escapeHtml(comment.dislike) + "<br><br>";
+		html += "<b>Other:</b><br>";
+		html += escapeHtml(comment.other) + "<br><br>";
+
+		feedback.innerHTML = html + "<hr>" + feedback.innerHTML;
+
+	});
+
+	function escapeHtml(text) {
+		if(!text) return "";
+		return text.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
+	}
+</script>

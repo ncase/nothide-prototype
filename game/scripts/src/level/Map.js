@@ -142,6 +142,8 @@
 
 	};
 	var _makePlaceholderBG = function(self,ctx,tiles,config){
+
+		console.log('wat');
 		
 		// Placeholder map
 		for(var y=0;y<tiles.length;y++){
