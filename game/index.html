@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--title>Nothing To Hide</title-->
+        <title>Nothing To Hide</title>
         <link href='css/index.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -32,7 +32,7 @@
 			<br>
 
 			What do you feel could use more work, and why?<br>
-			(teaching the mechanics, difficulty curve, the art style...)
+			(difficulty curve, teaching the mechanics, the art style...)
 			<textarea id="comment_dislike"></textarea>
 			<br>
 
@@ -90,6 +90,7 @@
 	</body>
 </html>
 
+<!-- Firebase & Feedback -->
 <script src='https://cdn.firebase.com/v0/firebase.js'></script>
 <script>
 var myDataRef = new Firebase('https://nothide-prototype-feedback.firebaseio.com/');
@@ -113,3 +114,21 @@ submit.onclick = function(){
 
 };
 </script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.nothingtohide.cc"]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik-ncase.rhcloud.com/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
