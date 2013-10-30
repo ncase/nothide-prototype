@@ -15,20 +15,23 @@
 		<div style="font-size:30px; text-align:center; margin-top:30px">
 			This is an early prototype, I need your honest critique!
 		</div>
+		<div style="color:#999; text-align:center;">
+			(all answers are optional)
+		</div>
 		<div id="feedback">
 			<br>
 			
-			Hi, what's your name?
+			<!--Hi, what's your name?
 			<br>
 			<input id="comment_name"></input>
-			<br>
+			<br-->
 
-			What stuff in this prototype did you like?<br>
+			What stuff in this prototype did you like, and why?<br>
 			(the puzzle mechanic, the mass-surveillance theme, the art style...)
 			<textarea id="comment_like"></textarea>
 			<br>
 
-			What do you feel could use more work?<br>
+			What do you feel could use more work, and why?<br>
 			(teaching the mechanics, difficulty curve, the art style...)
 			<textarea id="comment_dislike"></textarea>
 			<br>
@@ -100,7 +103,7 @@ submit.onclick = function(){
 	now = now.toString();
 
 	var comment = {
-		name: document.getElementById("comment_name").value,
+		//name: document.getElementById("comment_name").value,
 		datetime: now,
 		like: document.getElementById("comment_like").value,
 		dislike: document.getElementById("comment_dislike").value,
