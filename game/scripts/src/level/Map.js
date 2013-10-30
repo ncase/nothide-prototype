@@ -59,7 +59,7 @@
 			_makePlaceholderBG(self,bgContext,tiles,config);
 		}
 
-		// CCTV
+		// CCTV Lines
 		var cctvCache = document.createElement("canvas");
 		cctvCache.width = Display.width;
 		cctvCache.height = Display.height;
@@ -78,21 +78,9 @@
 
 			if(level.config.level.art.hideCam) return;
 
-			// Draw camera, with snowscreen
+			// Draw camera, with CCTV Lines
 			var ctx = Display.context.backgroundCam;
 			ctx.drawImage(camCache,0,0);
-
-			// Static
-			/*var w = self.width;
-			var h = self.height;
-			ctx.save();
-			ctx.globalAlpha = 0.1;
-			ctx.translate(w/2,h/2);
-			ctx.scale( (linesY%3==0) ? 1 : -1, (linesY%2==0) ? 1 : -1 );
-			ctx.drawImage(Asset.image.snow, -w/2, -h/2, w, h);
-			ctx.restore();*/
-
-			// CCTV lines
 			linesY += 1;
 			if(linesY>7) linesY=0;
 			var x = level.camera.x - Display.width/2;

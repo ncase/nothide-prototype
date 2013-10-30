@@ -183,7 +183,7 @@
 		var isNodeWebkit = (typeof process == "object");
 
 		var deferred = Q.defer();
-		var xhr = new XMLHttpRequest();
+		var xhr = _createXMLHTTPObject();
 		xhr.open("GET", src);
 		xhr.onreadystatechange = function() {
 			if( (xhr.readyState===4 && xhr.status===200) || (isNodeWebkit && xhr.readyState===3) ){
@@ -194,6 +194,22 @@
 		xhr.send();
 		return deferred.promise;
 
+	}
+
+	// Because IE still sucks.
+	function _createXMLHTTPObject() {
+		var XMLHttpFactories = [
+		    function(){return new XMLHttpRequest()},
+		    function(){return new ActiveXObject("Msxml2.XMLHTTP")},
+		    function(){return new ActiveXObject("Msxml3.XMLHTTP")},
+		    function(){return new ActiveXObject("Microsoft.XMLHTTP")}
+		];
+	    var xmlhttp;
+	    for(var i=0;i<XMLHttpFactories.length;i++){
+	        try{ xmlhttp = XMLHttpFactories[i](); }catch(e){ continue; }
+	        break;
+	    }
+	    return xmlhttp;
 	}
 
 })(window);

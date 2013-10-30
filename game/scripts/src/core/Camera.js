@@ -18,7 +18,7 @@
 
 			// If you move, camera's dirty
 			if( Math.abs(this.x-this.gotoX)>0.1 || Math.abs(this.y-this.gotoY)>0.1 ){
-				level.shadows.dirtyCam = true;
+				level.shadows.dirtyMoveCam = true;
 			}
 
 			// Swing to gotoSpot

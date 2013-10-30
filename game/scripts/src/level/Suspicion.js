@@ -9,9 +9,8 @@
 		this.config = config;
 
 		// Alarm sound
-		var alarm = createjs.Sound.play("sfx_alarm",null,0,0,-1,0.5,0); // It SHOULD be looping infinitely...
+		var alarm = null;
 		var alarmActive = false;
-		alarm.stop();
 
 		///////////////////////
 		///// UPDATE LOOP /////
@@ -50,13 +49,16 @@
 			// Alarm sound
 			if(alarmActive && hide==0){
 				alarm.stop();
+				alarm = null;
 				alarmActive = false;
 			}
 			if(!alarmActive && hide>0){
-				alarm.play();
+				alarm = createjs.Sound.play("sfx_alarm",null,0,0,-1,0.5,0);
 				alarmActive = true;
 			}
-			alarm.setVolume(hide);
+			if(alarmActive){
+				alarm.setVolume(hide);
+			}
 
 			// Grace & Reset Level
 			if(hide==1){
@@ -123,9 +125,12 @@
 			lastBar = currBar;
 		};
 
-		// KILL LOGIC
+		//////////////////////
+		///// KILL LOGIC /////
+		//////////////////////
+		
 		this.kill = function(){
-			alarm.stop();
+			if(alarm) alarm.stop();
 		};
 
 	};

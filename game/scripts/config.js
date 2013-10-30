@@ -4,16 +4,13 @@ Display.init({
 });
 
 Asset.init({
-	images:{
-		//snow:'assets/textures/snow.png'
-	},
+	images:{},
 	sprites:{
 		girl:'assets/sprites/girl',
 		girlWithPrism:'assets/sprites/girlWithPrism',
 		MrPrism:'assets/sprites/MrPrism'
 	},
 	sounds:{
-		//music_creepy:{src:'assets/music/bg.ogg', data:1},
 
 		sfx_shotdown:{src:'assets/sounds/mp3/shotdown.mp3|assets/sounds/ogg/shotdown.ogg', data:1},
 		sfx_alarm:{src:'assets/sounds/mp3/alarm.mp3|assets/sounds/ogg/alarm.ogg', data:1},

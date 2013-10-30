@@ -94,7 +94,7 @@ body {
 /* newsletter */
 #newsletter #newsletter_email {
   padding:10px; 
-  font-family:Open Sans;
+  font-family:Raleway;
   width:100%; 
   font-size:40px;
   border:0;
@@ -106,7 +106,7 @@ body {
   position: absolute;
   top: 15px;
   font-size: 25px;
-  font-family: Open Sans;
+  font-family: Raleway;
   border-radius: 30px;
   padding: 5px 15px;
   right: 0;

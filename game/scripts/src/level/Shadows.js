@@ -18,7 +18,14 @@
 		///// DRAW LOOP /////
 		/////////////////////
 
+		var shadowCamCache = document.createElement("canvas");
+		shadowCamCache.width = level.map.width;
+		shadowCamCache.height = level.map.height;
+		var shadowCamContext = shadowCamCache.getContext('2d');
+		shadowCamContext.fillStyle = "#000";
+
 		this.dirtyCam = true;
+		this.dirtyMoveCam = true;
 		this.draw = function(){
 
 	    	// Draw Player Shadow
@@ -27,21 +34,32 @@
 			var player = level.player;
 		    _drawShadow(ctx,player.x,player.y);
 
-	    	// DIRTY
-			if(!self.dirtyCam) return;
-			self.dirtyCam = false;
+	    	// Cache shadows of ACTIVE cameras
+			if(self.dirtyCam){
+				self.dirtyCam = false;
+				self.dirtyMoveCam = true;
 
-			// Draw shadows of ACTIVE cameras
-			ctx = Display.context.shadowsCam;
-			ctx.fillStyle = "#000";
-			ctx.fillRect(0,0, level.map.width, level.map.height);
-			var prisms = level.prisms.prisms;
-			for(var i=0;i<prisms.length;i++){
-				var cam = prisms[i];
-				if(!cam.active) continue;
-				var cachedCanvas = cam.canvas;
+				ctx = shadowCamContext;
+				ctx.globalCompositeOperation = "source-over";				
+				ctx.fillRect(0,0, level.map.width, level.map.height);
 				ctx.globalCompositeOperation = "source-in";
-				ctx.drawImage(cachedCanvas,0,0);
+				var prisms = level.prisms.prisms;
+				for(var i=0;i<prisms.length;i++){
+					var cam = prisms[i];
+					if(!cam.active) continue;
+					var cachedCanvas = cam.canvas;
+					ctx.drawImage(cachedCanvas,0,0);
+				}
+			}
+
+			// Draw Shadows for Eyes.
+			if(self.dirtyMoveCam){
+				self.dirtyMoveCam = false;
+
+				ctx = Display.context.shadowsCam;
+				ctx.clearRect(0,0, level.map.width, level.map.height);
+				ctx.drawImage(shadowCamCache,0,0);
+
 			}
 
 		};

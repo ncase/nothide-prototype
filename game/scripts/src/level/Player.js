@@ -43,17 +43,10 @@
 		    if(endLoop<=0) console.log("WOOPS");
 
 
-		    //////////////////////////////////////////////////////////////////////////////////////////
+		    /////////////////////////////////////////////////
+		    // FRAME LOGIC: For stable walking despite FPS //
+		    /////////////////////////////////////////////////
 
-		    
-			
-			// How transparent is your part of the BACKGROUND canvas?
-			/*var px = self.x - (level.camera.x-Display.width/2);
-			var py = self.y - (level.camera.y-Display.height/2);
-			px = Math.round(px);
-			py = Math.round(py);
-			var imageData = Display.context.background.getImageData(px,py,1,1); // What happens when you're OUT of screen?!
-			var alpha = 1-(imageData.data[3]/255);*/
 
 			// Facing which way?
 		    if(Key.left && !Key.right) faceDirection = -1;
@@ -132,6 +125,13 @@
 		    ctx.drawImage(spriteImage,frame.x,frame.y,frame.w,frame.h,0,0,frame.w,frame.h);
 
 			// Draw shade of YOU
+			// How transparent is your part of the BACKGROUND canvas?
+			/*var px = self.x - (level.camera.x-Display.width/2);
+			var py = self.y - (level.camera.y-Display.height/2);
+			px = Math.round(px);
+			py = Math.round(py);
+			var imageData = Display.context.background.getImageData(px,py,1,1); // What happens when you're OUT of screen?!
+			var alpha = 1-(imageData.data[3]/255);*/
 			/*ctx.save();
 			ctx.globalCompositeOperation = "source-atop";
 			ctx.fillStyle = "rgba(0,0,0,"+alpha.toFixed(1)+")";
