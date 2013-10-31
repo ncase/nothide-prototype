@@ -87,6 +87,7 @@ body, canvas, div {
     top: 80px;
     left: 40px;
     color: #fff;
+    font-size: 17px;
 }
 #loading_bar {
 	position: absolute;
