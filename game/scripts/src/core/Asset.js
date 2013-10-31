@@ -139,7 +139,7 @@
 						resolveArt();
 					});
 				}
-				if(levelData.art.cam){
+				if(levelData.art.cam && !levelData.art.hideCam){
 					artPromises++;
 					_promiseImage(camSource).then(function(cam){
 						config.art.cam = cam;

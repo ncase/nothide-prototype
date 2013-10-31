@@ -24,11 +24,11 @@
 			// Tutorial Message
 			var message = {
 				intro: "Arrow keys to move. Hold shift to run.",
-				tut_look_1: "DON'T HIDE. Always be in plain view of at least one Eye.",
-				tut_look_2: "If you can't see an Eye, it can't see you.",
-				tut_pickup: "Space to pick up/drop an Eye.",
-				puzzle_bridge: "Upgrade! Now you can see what the Eyes see!",
-				tut_blackout: "The Eyes can see in the dark.",
+				tut_look_1: "DON'T HIDE. Always be in plain view of at least one Prism Eye.",
+				tut_look_2: "If you can't see a Prism Eye, it can't see you.",
+				tut_pickup: "Space to pick up/drop a Prism Eye.",
+				puzzle_bridge: "Upgrade! Now you can see what the Prism Eyes see!",
+				tut_blackout: "The Prism Eyes can see in the dark.",
 				puzzle_huge: "Finally, have a big puzzle room."
 			};
 			
