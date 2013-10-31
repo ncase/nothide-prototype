@@ -138,5 +138,6 @@ body, canvas, div {
 #ending_screen {
 	background: #fff;
 	color: #000;
-	font-size:100px;text-align:center;
+	font-size:50px;
+	text-align:center;
 }
