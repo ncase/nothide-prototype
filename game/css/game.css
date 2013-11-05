@@ -139,6 +139,13 @@ body, canvas, div {
 #ending_screen {
 	background: #fff;
 	color: #000;
-	font-size:50px;
+	font-size:45px;
 	text-align:center;
+}
+#ending_screen a{
+	color:inherit;
+	color: #f40;
+}
+#ending_screen a:hover{
+	color: #f40;
 }
